@@ -1,65 +1,111 @@
 import Image from "next/image";
+// import "./globals.css";
+
+
+const data = [
+    {
+        image: "/image/Image_1.png",
+        propertyName: "Park Avenue",
+        price: "₦1,650,000",
+        address: "Ikeja GRA, Lagos",
+        bed: 3,
+        bath: 2,
+    },
+    {
+        image: "/image/Image_2.png",
+        propertyName: "Classical House",
+        price: "₦3,500,000",
+        address: "Ibadan, Oyo state",
+        bed: 4,
+        bath: 2,
+    },
+    {
+        image: "/image/Image_3.png",
+        propertyName: "Serenity Ridge Villa",
+        price: "₦2,500,000",
+        address: "Lekki Phase 1, Lagos",
+        bed: 2,
+        bath: 1,   
+    },
+    {
+        image: "/image/Image_4.png",
+        propertyName: "Bayview Luxury",
+        price: "₦1,650,000",
+        address: "Osborne Foreshore, Ikoyi",
+        bed: 1,
+        bath: 1,   
+    },
+    {
+        image: "/image/Image_5.png",
+        propertyName: "Lakeside Haven",
+        price: "₦1,900,000",
+        address: "Ajah, Lagos",
+        bed: 2,
+        bath: 2,   
+    },
+    {
+        image: "/image/Image_6.png",
+        propertyName: "Classic Villa",
+        price: "₦2,050,000",
+        address: "Chevron Drive, Lekki",
+        bed: 2,
+        bath: 1,   
+    }
+]
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div>
+      <nav>
+      <img src="image/Logo.png" alt="Logo" />
+      <div className="Nyangu">
+        <a href="">About</a>
+        <a href="">Rentals</a>
+        <a href="">Manage Listings</a>
+        <a href="">Rentals</a>
+      </div>
+      <div className="Nyangu">
+        <a href="">Post a property</a>
+        <a href="">log in</a>
+        <button className="btn">Sign Up</button>
+      </div>
+      </nav>
+
+      <div className="w-10/12 mx-auto my-20">
+        <main className="listings">
+        {data.map((item, index) => (
+          <div className="card" key={index}>
+          <Image src={item.image} alt="" width={400} height={200} className="mb-4" />
+          <div className="content">
+            <div className="content-up">
+              <div>
+                <p>{item.propertyName}</p>
+                <p>{item.address}</p>
+              </div>
+              <p>{item.price}</p>
+            </div>
+            <div className="content-down">
+              <div className="ammenities">
+                <div className="ammenity">
+                  <img src="/image/beds_icon.png" alt="beds_icon" />
+                  <p>{item.bed}</p>
+                </div>
+                <div className="ammenity">
+                  <img src="/image/bathtub_icon.png" alt="beds_icon" />
+                  <p>{item.bath}</p>
+                </div>
+              </div>
+
+              <div className="compare">
+                <input type="checkbox" name="" id="" />
+                <label>Compare</label>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+        ) )}
       </main>
+      </div>
     </div>
   );
 }
