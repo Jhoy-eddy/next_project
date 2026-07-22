@@ -57,18 +57,19 @@ export default function Home() {
   return (
     <div>
       <nav>
-      <img src="image/Logo.png" alt="Logo" />
-      <div className="Nyangu">
-        <a href="">About</a>
-        <a href="">Rentals</a>
-        <a href="">Manage Listings</a>
-        <a href="">Rentals</a>
-      </div>
-      <div className="Nyangu">
-        <a href="">Post a property</a>
-        <a href="">log in</a>
-        <button className="btn">Sign Up</button>
-      </div>
+        <img src="image/Logo.png" alt="Logo" />
+        <img src="image/hamburger.png" alt="Logo" className="menu-icon" width={20} height={20} />
+        <div className="Nyangu">
+          <a href="">About</a>
+          <a href="">Rentals</a>
+          <a href="">Manage Listings</a>
+          <a href="">Rentals</a>
+        </div>
+        <div className="Nyangu">
+          <a href="">Post a property</a>
+          <a href="">log in</a>
+          <button className="btn">Sign Up</button>
+        </div>
       </nav>
 
       <div className="w-10/12 mx-auto my-20">
