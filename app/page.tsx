@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 // import "./globals.css";
 
 
@@ -75,35 +76,35 @@ export default function Home() {
       <div className="w-10/12 mx-auto my-20">
         <main className="listings">
         {data.map((item, index) => (
-          <div className="card" key={index}>
-          <Image src={item.image} alt="" width={400} height={200} className="mb-4" />
-          <div className="content">
-            <div className="content-up">
-              <div>
-                <p>{item.propertyName}</p>
-                <p>{item.address}</p>
-              </div>
-              <p>{item.price}</p>
-            </div>
-            <div className="content-down">
-              <div className="ammenities">
-                <div className="ammenity">
-                  <img src="/image/beds_icon.png" alt="beds_icon" />
-                  <p>{item.bed}</p>
+          <Link href={`/listings/${item.propertyName}`} className="card" key={index}>
+            <Image src={item.image} alt="" width={400} height={200} className="mb-4" />
+            <div className="content">
+              <div className="content-up">
+                <div>
+                  <p>{item.propertyName}</p>
+                  <p>{item.address}</p>
                 </div>
-                <div className="ammenity">
-                  <img src="/image/bathtub_icon.png" alt="beds_icon" />
-                  <p>{item.bath}</p>
-                </div>
+                <p>{item.price}</p>
               </div>
+              <div className="content-down">
+                <div className="ammenities">
+                  <div className="ammenity">
+                    <img src="/image/beds_icon.png" alt="beds_icon" />
+                    <p>{item.bed}</p>
+                  </div>
+                  <div className="ammenity">
+                    <img src="/image/bathtub_icon.png" alt="beds_icon" />
+                    <p>{item.bath}</p>
+                  </div>
+                </div>
 
-              <div className="compare">
-                <input type="checkbox" name="" id="" />
-                <label>Compare</label>
+                <div className="compare">
+                  <input type="checkbox" name="" id="" />
+                  <label>Compare</label>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
+          </Link>
         ) )}
       </main>
       </div>

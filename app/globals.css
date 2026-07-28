@@ -85,6 +85,34 @@ body {
   gap: 20px;
 }
 
+.page {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 300px;
+  gap: 8px
+}
+
+.pim{
+  /* margin-top: 180px; */
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  height: 300px;
+  width: 100%;
+  /* gap: 40px; */
+  /* width: 250px; */
+  /* height: 250px; */
+}
+
+.pim img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* .big_img {
+  background: #000;
+} */
+
 @media screen and (max-width: 480px) {
   .listings {
    grid-template-columns: repeat(1, 1fr);
@@ -101,3 +129,9 @@ body {
  }
 }
 
+
+/* .big_img {
+  margin-top: 180px;
+  width: 770px;
+  height: 515px;
+} */
