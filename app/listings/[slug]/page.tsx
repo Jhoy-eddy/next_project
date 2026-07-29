@@ -35,7 +35,7 @@ const page = () => {
       <div className="grid md:grid-cols-[2fr_1fr] gap-3 `min-h-[515px]">
         <div className="h-full">
           <img
-            src={"/image/Figma_IMAGE1.png"}
+            src={"/image/Figma_Image1.png"}
             alt="property"
             className="w-full h-full object-cover rounded-[10px]"
           />
@@ -43,13 +43,13 @@ const page = () => {
 
         <div className="grid grid-cols-2 grid-rows-2 gap-3 h-full">
           <img
-            src={"/image/Property_image2.png"}
+            src={"/image/Property_Image2.png"}
             alt="property"
             className="w-full h-full object-cover rounded-[10px]"
           />
 
           <img
-            src={"/image/Property_image3.png"}
+            src={"/image/Property_Image3.png"}
             alt="property"
             className="w-full h-full object-cover rounded-[10px]"
           />
